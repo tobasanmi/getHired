@@ -15,7 +15,7 @@ const EmployeeSchema = new Schema(
     skill:[String],
     work_history:{type:String, required:true},
     certification:[String],
-    jobs_id : [{type:Schema.Types.ObjectId, ref: 'Jobs'}]
+    phone:{type:Number, required: true},
   }
 );
 

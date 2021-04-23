@@ -16,4 +16,4 @@ const EmployerSchema = new Schema({
   address:{type:String, required:true},
 });
 
-module.exports = mongoose.Schema('Employer', EmployerSchema);
+module.exports = mongoose.model('Employer', EmployerSchema);

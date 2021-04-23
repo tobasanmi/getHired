@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan  = require('morgan');
 const bodyParser = require('body-parser');
+const employerRouter = require('./routes/employerRoutes');
+const employeeRouter = require('./routes/employeeRoutes');
 
 
 mongoose.set('debug', true);
@@ -23,5 +25,10 @@ const app = express();
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 // app.use(cors({credentials: true, origin: '*'}))
+
+//routes with controller
+app.use('/employer',employerRouter )
+app.use('/employee',employeeRouter );
+
 
 app.listen(3001, () => console.log('app started on port 3001'));
