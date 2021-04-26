@@ -10,13 +10,10 @@ const JobsSchema = new Schema(
     qualification:{type:String, required : true},
     experience:{type:String, required:true},
     job_level:{type:String, required:true},
-    job_summary:{type:String, minlength:50, maxlength:500},
+    job_summary:{type:String},
     job_description:{type:String, required:true},
     job_title:{type:String, required: true},
-    bid:[{type:Schema.Types.ObjectId, ref: 'Freelancer'}],
-    employer_id:[{type:Schema.Types.ObjectId, ref: 'Employer'}],
-
-    
+    employer:{type:Schema.Types.ObjectId, ref: 'Employer'},
   }
 );
 

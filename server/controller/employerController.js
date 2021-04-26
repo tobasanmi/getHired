@@ -48,7 +48,7 @@ module.exports.add_employer = async (req,res,next) => {
 module.exports.get_employer_details = async(req,res,next)=>{
   try{
     const id = req.params.id;
-    const result = await Employer.findOne({_id:id})
+    const result = await Employer.findById(id)
     console.log('result', result);
     return res.json({data:result});
   }catch(err){

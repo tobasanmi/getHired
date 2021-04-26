@@ -14,6 +14,7 @@ const EmployerSchema = new Schema({
   contact_person:{type:String, required:true},
   phone:{type:Number, required:true},
   address:{type:String, required:true},
+  jobs:[{type:Schema.Types.ObjectId, ref:"Jobs"}]
 });
 
 module.exports = mongoose.model('Employer', EmployerSchema);
